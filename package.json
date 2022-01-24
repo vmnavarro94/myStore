@@ -1,0 +1,20 @@
+{
+  "name": "my-store",
+  "version": "1.0.0",
+  "description": "back-end for a sales point",
+  "main": "index.js",
+  "author": "Victor Navarro",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  }
+}

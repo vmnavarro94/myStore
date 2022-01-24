@@ -10,7 +10,16 @@ const errorHandler = (error, req, res, next) => {
   })
 }
 
+const boomErrorHangler = (error, req, res, next) => {
+  if (error.isBoom) {
+    const { output } = error
+    res.status(output.statusCode).json(output.payload)
+  }
+  next(error)
+}
+
 module.exports = {
   logErrors,
-  errorHandler
+  errorHandler,
+  boomErrorHangler,
 }

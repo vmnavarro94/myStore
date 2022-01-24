@@ -37,6 +37,4 @@ app.use(logErrors)
 app.use(boomErrorHangler)
 app.use(errorHandler)
 
-app.listen(port, () => {
-  console.log('Mi port' + port)
-})
+app.listen(port)

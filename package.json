@@ -11,6 +11,7 @@
     "lint": "eslint"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.3",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

@@ -24,7 +24,7 @@ router.get('/filter', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const { id } = req.params
-  res.json({
+  res.status(200).json({
     id,
     name: 'Producto 1',
     price: 1000
@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   const { body } = req;
 
-  res.json({
+  res.status(201).json({
     message: 'created',
     data: body,
   })

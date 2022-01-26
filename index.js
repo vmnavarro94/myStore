@@ -2,7 +2,12 @@ const express = require('express')
 const cors = require('cors')
 
 const routerApi = require('./routes')
-const { logErrors, errorHandler, boomErrorHangler } = require('./middlewares/error.handler')
+const {
+  logErrors,
+  errorHandler,
+  boomErrorHangler,
+  ormErrorHandler,
+} = require('./middlewares/error.handler')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -24,12 +29,13 @@ const options = {
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.send('hola mi server en express')
+  res.send('MyStore API')
 })
 
 routerApi(app)
 
 app.use(logErrors)
+app.use(ormErrorHandler)
 app.use(boomErrorHangler)
 app.use(errorHandler)
 

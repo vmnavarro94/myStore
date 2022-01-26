@@ -1,17 +1,13 @@
-const express = require('express');
-const cors = require('cors');
+const express = require('express')
+const cors = require('cors')
 
-const routerApi = require('./routes');
-const {
-  logErrors,
-  errorHandler,
-  boomErrorHangler,
-} = require('./middlewares/error.handler');
+const routerApi = require('./routes')
+const { logErrors, errorHandler, boomErrorHangler } = require('./middlewares/error.handler')
 
-const app = express();
-const port = process.env.PORT || 3000;
+const app = express()
+const port = process.env.PORT || 3000
 
-app.use(express.json());
+app.use(express.json())
 
 /*
 const whitelist = ['http://localhost:8080', 'https://myapp.com']
@@ -25,16 +21,16 @@ const options = {
   }
 }
 */
-app.use(cors());
+app.use(cors())
 
 app.get('/', (req, res) => {
-  res.send('hola mi server en express');
-});
+  res.send('hola mi server en express')
+})
 
-routerApi(app);
+routerApi(app)
 
-app.use(logErrors);
-app.use(boomErrorHangler);
-app.use(errorHandler);
+app.use(logErrors)
+app.use(boomErrorHangler)
+app.use(errorHandler)
 
-app.listen(port);
+app.listen(port)

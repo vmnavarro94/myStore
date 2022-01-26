@@ -1,4 +1,4 @@
-const { Client } = require('pg');
+const { Client } = require('pg')
 
 const getConnection = async () => {
   const client = new Client({
@@ -7,9 +7,9 @@ const getConnection = async () => {
     user: 'victor',
     password: 'password1234!',
     database: 'my_store',
-  });
-  await client.connect();
-  return client;
-};
+  })
+  await client.connect()
+  return client
+}
 
-module.exports = getConnection;
+module.exports = getConnection

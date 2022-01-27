@@ -11,8 +11,8 @@ class UserService {
   }
 
   async find() {
-    const response = await models.User.findAll()
-    return response
+    const users = await models.User.findAll()
+    return users
   }
 
   async findOne(id) {

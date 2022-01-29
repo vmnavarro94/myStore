@@ -59,7 +59,7 @@ router.delete('/:id', validatorHandler(getCustomerSchema, 'params'), async (req,
   try {
     const { id } = req.params
     await service.delete(id)
-    req.status(201).json({ id })
+    res.status(201).json({ id })
   } catch (error) {
     next(error)
   }

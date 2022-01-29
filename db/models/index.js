@@ -7,6 +7,7 @@ const setupModels = (sequelize) => {
   Customer.init(CustomerSchema, Customer.config(sequelize))
 
   // associations
+  User.associate(sequelize.models)
   Customer.associate(sequelize.models)
 }
 
